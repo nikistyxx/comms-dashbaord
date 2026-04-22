@@ -522,7 +522,7 @@ Both dashboards share the same JavaScript logic. The only differences are CSS cl
 
 - **Dashboard** — all live content
 - **Completed** — Completed Log (first) then Daily Summary (second). VIEW & EDIT HISTORY button switches to History tab via `document.querySelectorAll('.page-tab')[2].click()` — NOT an external file link.
-- **History** — `contenteditable="true"` day-entry blocks. Newest first. **Never overwrite by scheduled refresh.**
+- **History** — Single latest auto-refresh log entry at top (replaced each refresh, not accumulated). Below it: the last 5 daily journal blocks as `contenteditable="true"` HTML, newest first. Below those: a **"View Full History Log"** button linking to `daily-log.md`. New daily entries are written to `daily-log.md` first — the HTML shows only the 5 most recent. **Never accumulate auto-refresh log entries; replace the single entry each time.**
 
 ### Persistent State (localStorage)
 
@@ -641,7 +641,9 @@ Scheduled task instructions:
 2. Pull fresh data from Slack, Outlook, and Google Docs (last 2 hours)
 3. Use Edit tool to update ONLY: KPI values, action items, draft replies, docs list, daily summary, auto-resolved JSON array
 4. For Creative track: also rotate the tarot card — embed the `TAROT_CARDS` array and `getTodaysCard()` function to pick today's card deterministically from the full 78-card deck
-5. NEVER touch: `<style>` block, `<script>` block, tab structure, History tab content, Completed Log order
+5. **History tab auto-refresh log:** Replace the single existing log entry with the new one — do NOT prepend or accumulate. Find the existing `<strong>` entry inside the AUTO-REFRESH LOG div and replace it.
+6. **History tab daily blocks:** If today's date block does not exist in the HTML, add a new blank `contenteditable` block at the top of the day entries (above the existing blocks). Also append the new entry to `daily-log.md`. Keep only the 5 most recent day blocks in the HTML — remove the oldest if adding a new one would exceed 5.
+7. NEVER touch: `<style>` block, `<script>` block, tab structure, Completed Log order
 
 Use `create_scheduled_task` with:
 - `taskId`: `refresh-comms-dashboard` (or personalized)
