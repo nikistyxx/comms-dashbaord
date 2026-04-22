@@ -55,7 +55,7 @@ npx skills add nikistyxx/comms-dashboard
 2. Open Claude Desktop and start a new Cowork session
 3. Drag the `SKILL.md` file into the chat window
 4. Click "Save skill" — that's it
-```
+
 
 ---
 
