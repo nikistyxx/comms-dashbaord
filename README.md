@@ -1,5 +1,7 @@
 # Claude Communications Dashboard Skill
 
+![Communications Dashboard](comms-dashboard-nikiselken-desktop-big.png)
+
 *A Cowork skill that builds you a personalized dashboard of everything that needs your attention.*
 
 ---
@@ -20,6 +22,10 @@ When you run the skill, you'll be asked which style you want:
 | **Creative** | Bold Memphis design — thick borders, saturated colors, geometric shapes, and a daily tarot card reading. |
 
 Both styles include the same data, features, and scheduled refresh. The only difference is the visual design.
+
+| Standard | Creative |
+|----------|----------|
+| ![Standard dashboard — clean blue layout with action items and draft replies](comms-dashboard-nikiselken.png) | ![Creative dashboard — bold Memphis design with hot pink header and tarot card](comms-dashboard-nikiselken-create.png) |
 
 ---
 
@@ -47,7 +53,7 @@ Both styles include the same data, features, and scheduled refresh. The only dif
 Or install via the skills CLI:
 
 ```bash
-npx skills add YOUR_GITHUB_USERNAME/comms-dashboard
+npx skills add nikistyxx/comms-dashboard
 ```
 
 ---
