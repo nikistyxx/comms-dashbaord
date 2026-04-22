@@ -89,6 +89,7 @@ Requires [Node.js](https://nodejs.org).
 If you don't have these connectors set up yet, Cowork will walk you through connecting them when you first run the skill.
 
 ---
+More info on how I made it on [nikiselken.com:](https://nikiselken.com/blog/2026/4/21/i-built-an-ai-skill-that-turns-your-inbox-into-a-dashboard-and-added-a-tarot-card).
 
 ## Feature Details
 
